@@ -13,18 +13,23 @@ package lab5lavyk;
 
 // https://www.embarcados.com.br/desenvolvendo-um-rtos-buffer-circular/
 public class BufferCircular {
-    private int quantidade;
-    Integer[] buffer = new Integer[quantidade];
+    private int tamanhoBuffer;
+    Integer[] buffer = new Integer[tamanhoBuffer];
     private int ini = 0;
     private int fim = 0;
 
-    BufferCircular(int quantidade){
-        this.quantidade = quantidade;
+    BufferCircular(int tamanhoBuffer){
+        this.tamanhoBuffer = tamanhoBuffer;
     }
     
     public void adicionar(InformacaoDaMaquina info){
-        buffer[fim] = info;
-        this.fim++;
+        //buffer[fim] = info;
+        
+        if ((fim+1) < tamanhoBuffer){
+            this.fim++;
+        } else {
+            this.fim = 0;
+        }
     }
     
     public InformacaoDaMaquina remover(){

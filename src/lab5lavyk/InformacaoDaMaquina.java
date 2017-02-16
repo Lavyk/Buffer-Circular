@@ -14,8 +14,8 @@ import java.util.Random;
  */
 public class InformacaoDaMaquina {
 
-    Random random = new Random();
-    int numRandom = random.nextInt(100);
+    private Random random = new Random();
+    private int numRandom = random.nextInt(100);
 
     public int usoRAM() {
         
