@@ -7,8 +7,11 @@ package lab5lavyk;
 
 /**
  *
- * @author usuario
+ * @author Lavyk
  */
+
+
+// https://www.embarcados.com.br/desenvolvendo-um-rtos-buffer-circular/
 public class BufferCircular {
     private int quantidade;
     Integer[] buffer = new Integer[quantidade];
