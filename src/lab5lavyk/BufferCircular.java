@@ -11,22 +11,24 @@ package lab5lavyk;
  */
 public class BufferCircular {
     private int quantidade;
-    Integer[] tamanho = new Integer[quantidade];
-    
+    Integer[] buffer = new Integer[quantidade];
+    private int ini = 0;
+    private int fim = 0;
 
     BufferCircular(int quantidade){
         this.quantidade = quantidade;
     }
     
-    public void adicionar(){
-        
+    public void adicionar(InformacaoDaMaquina info){
+        buffer[fim] = info;
+        this.fim++;
     }
     
-    public void remover(){
-        
+    public InformacaoDaMaquina remover(){
+        this.ini++;
     }
 
-    /*public boolean estaVazio(){
+    public boolean estaVazio(){
        
         return boolean;
     }
@@ -38,6 +40,5 @@ public class BufferCircular {
     public int tamanhoMaximo(){
         return int;
     }
-*/
     
 }
