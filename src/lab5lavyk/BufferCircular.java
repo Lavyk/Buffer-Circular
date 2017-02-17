@@ -46,10 +46,10 @@ public class BufferCircular {
         return ini == fim;
     }
 
-    /*    public int numeroDeElementos(){
+    public int numeroDeElementos(){
     
-    return int;
-    }*/
+    return fim-ini;
+    }
 
     public int tamanhoMaximo(){
         return buffer.length;

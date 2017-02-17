@@ -14,6 +14,18 @@ public class Main {
         BufferCircular a = new BufferCircular(5);
         InformacaoDaMaquina b = new InformacaoDaMaquina();
         a.adicionar(b);
-        System.out.println(a.estaVazio());
+        a.adicionar(b);
+        a.adicionar(b);
+        a.adicionar(b);
+        a.adicionar(b);
+        a.adicionar(b);
+        a.adicionar(b);
+        a.adicionar(b);
+        a.adicionar(b);
+        a.adicionar(b);
+        a.adicionar(b);
+        
+        a.remover();
+        System.out.println(a.numeroDeElementos());
     }
 }
