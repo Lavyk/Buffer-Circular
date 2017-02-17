@@ -15,24 +15,12 @@ import java.util.Random;
 public class InformacaoDaMaquina {
 
     private Random random = new Random();
-    private int numRandom = random.nextInt(100);
-
-    public int usoRAM() {
-        
-        return numRandom;
-    }
-
-    public int usoHD() {
-        return numRandom;
-    }
-
-    public int usoCPU() {
-        return numRandom;
-    }
-
-    public double clockCPU() {
-        return Math.random();
-    }
+    private int numRandom = random.nextInt(100);    
+    
+    int usoRAM = numRandom;
+    int usoHD = numRandom;
+    int usoCPU = numRandom;
+    double clockCPU = random.nextDouble()*3;
     
     /* --------------------------------------------------------------
     usoRAM : int (valor de 0 a 100 indicando a porcentagem de uso)
