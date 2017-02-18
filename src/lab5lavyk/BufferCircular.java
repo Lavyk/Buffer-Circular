@@ -10,13 +10,12 @@ package lab5lavyk;
  * @author Lavyk
  */
 
-
-// https://www.embarcados.com.br/desenvolvendo-um-rtos-buffer-circular/
 public class BufferCircular {
     private int tamanhoBuffer;
     InformacaoDaMaquina[] buffer;
     private int ini = 0;
     private int fim = 0;
+    private int nElementos = 0;
 
     BufferCircular(int tamanhoBuffer){
         this.tamanhoBuffer = tamanhoBuffer;
@@ -35,9 +34,13 @@ public class BufferCircular {
     
     public InformacaoDaMaquina remover(){
         boolean vazio = estaVazio();
-        InformacaoDaMaquina  info = buffer[ini];
-        if(vazio){
+        InformacaoDaMaquina  info = null;
+        if(!vazio){
+            info = buffer[ini];
+            nElementos--;
             this.ini++;
+        } else {
+            System.err.println("O buffer está vazio, você não pode remover um elemento.");
         }
         return info;
     }
@@ -48,7 +51,14 @@ public class BufferCircular {
 
     public int numeroDeElementos(){
     
-    return fim-ini;
+    for (int i = 0; i < buffer.length; i++){
+        if(buffer[i] != null){
+            nElementos++;
+        }
+    }
+    
+
+    return nElementos;
     }
 
     public int tamanhoMaximo(){
