@@ -9,33 +9,33 @@ package lab5lavyk;
  *
  * @author Lavyk
  */
-
 public class BufferCircular {
+
     private int tamanhoBuffer;
     InformacaoDaMaquina[] buffer;
     private int ini = 0;
     private int fim = 0;
     private int nElementos = 0;
 
-    BufferCircular(int tamanhoBuffer){
+    BufferCircular(int tamanhoBuffer) {
         this.tamanhoBuffer = tamanhoBuffer;
         buffer = new InformacaoDaMaquina[tamanhoBuffer];
     }
-    
-    public void adicionar(InformacaoDaMaquina info){
+
+    public void adicionar(InformacaoDaMaquina info) {
         buffer[fim] = info;
-        if ((fim+1) < tamanhoBuffer){
-         
+        if ((fim + 1) < tamanhoBuffer) {
+
             this.fim++;
         } else {
             this.fim = 0;
         }
     }
-    
-    public InformacaoDaMaquina remover(){
+
+    public InformacaoDaMaquina remover() {
         boolean vazio = estaVazio();
-        InformacaoDaMaquina  info = null;
-        if(!vazio){
+        InformacaoDaMaquina info = null;
+        if (!vazio) {
             info = buffer[ini];
             nElementos--;
             this.ini++;
@@ -45,24 +45,23 @@ public class BufferCircular {
         return info;
     }
 
-    public boolean estaVazio(){
+    public boolean estaVazio() {
         return ini == fim;
     }
 
-    public int numeroDeElementos(){
-    
-    for (int i = 0; i < buffer.length; i++){
-        if(buffer[i] != null){
-            nElementos++;
+    public int numeroDeElementos() {
+
+        for (int i = 0; i < buffer.length; i++) {
+            if (buffer[i] != null) {
+                nElementos++;
+            }
         }
-    }
-    
 
-    return nElementos;
+        return nElementos;
     }
 
-    public int tamanhoMaximo(){
+    public int tamanhoMaximo() {
         return buffer.length;
     }
-    
+
 }
